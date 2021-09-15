@@ -1,0 +1,15 @@
+{% extends 'lms/home.html' %}
+{% block 'content' %}
+{% if  registered %}
+    <h3>Thank You For Registering</h3>
+{% else %}
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ user_form }}
+            {{ profile_form }}
+            <input type="submit" value="Register" class="btn btn-primary btn-block">
+        </form>
+    </div>
+{% endif %}
+{% endblock %}

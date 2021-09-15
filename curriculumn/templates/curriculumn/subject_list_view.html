@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+
+{% for subject in standards.subjects.all %}
+    {{subject.name}}
+    {{subject.description|truncatechars:75}}
+{% endfor %}
+{% endblock %}
